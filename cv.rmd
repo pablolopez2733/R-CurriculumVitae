@@ -53,9 +53,11 @@ datadrivencv::build_network_logo(CV$entries_data)
 
 
 ```{r}
-
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV]https://github.com/pablolopez2733/R-CurriculumVitae/raw/master/cv.pdf")
-
+if(params$pdf_mode){
+  cat("View this CV online with links at https://github.com/pablolopez2733/R-CurriculumVitae/blob/master/cv.pdf")
+} else {
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](C:/Users/pablo/Documents/DoctosMaestria/CV)")
+}
 ```
 
 Contact {#contact}
@@ -73,17 +75,6 @@ Language Skills {#skills}
 ```{r}
 CV %>% print_skill_bars()
 ```
-
-
-
-Disclaimer {#disclaimer}
---------------------------------------------------------------------------------
-
-Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
-
-
-
-
 
 Main
 ================================================================================
