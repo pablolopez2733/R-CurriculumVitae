@@ -22,7 +22,7 @@ source("cv_printing_functions.r")
 
 # Read in all data and initialize a CV printer object
 CV <- create_CV_object(
-  data_location = "C:/Users/pablo/Documents/DoctosMaestria/CV",  
+  data_location = "https://docs.google.com/spreadsheets/d/1VmqWZdAqKszzFG6Rk4sn3qPK4PtLzIacv_0noRZMxfE/edit?usp=sharing",  
   pdf_mode = params$pdf_mode
 )
 
@@ -53,11 +53,9 @@ datadrivencv::build_network_logo(CV$entries_data)
 
 
 ```{r}
-if(params$pdf_mode){
-  cat("View this CV online with links at _C:/Users/pablo/Documents/DoctosMaestr?a/CV_")
-} else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](C:/Users/pablo/Documents/DoctosMaestr?a/CV)")
-}
+
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV]https://github.com/pablolopez2733/R-CurriculumVitae/raw/master/cv.pdf")
+
 ```
 
 Contact {#contact}
@@ -83,9 +81,7 @@ Disclaimer {#disclaimer}
 
 Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
 
-The source code is available [on github.com/nstrayer/cv](C:/Users/pablo/Documents/DoctosMaestr?a/CV).
 
-Last updated on `r Sys.Date()`.
 
 
 
@@ -109,14 +105,6 @@ Education {data-icon=graduation-cap data-concise=true}
 CV %<>% print_section('education')
 ```
 
-
-
-Research Experience {data-icon=laptop}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('research_positions')
-```
 
 
 
@@ -164,41 +152,5 @@ CV %<>% print_text_block('data_science_writing_aside')
 
 ```{r}
 CV %<>% print_section('data_science_writings')
-```
-
-
-
-Selected Press (About)  {data-icon=newspaper}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('about_me_press')
-```
-
-
-<br>
-<br>
-
-
-Selected Press (By)  {data-icon=newspaper}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('by_me_press')
-```
-
-
-
-Selected Publications, Posters, and Talks {data-icon=book}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('academic_articles')
-```
-
-
-
-```{r}
-CV %<>% print_links()
 ```
 
